@@ -23,3 +23,5 @@ img2 = plt.imread(image_path2)
 plt.imshow(img2)
 plt.axis('off')  # Optional: Hide axis labels and ticks
 plt.show()
+
+# %%
