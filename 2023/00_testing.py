@@ -3,25 +3,27 @@ import matplotlib.pyplot as plt
 import os, time
 
 # %%
-# Get the absolute path to the image file
+# Get the absolute path to the image folder
 script_dir = os.path.dirname(os.path.abspath(__file__))
 image_folder = os.path.join(script_dir, "images")
-image_path1 = os.path.join(image_folder, "image1.jpeg")
-image_path2 = os.path.join(image_folder, "image2.jpeg")
 
-# Load and display the first image
-img1 = plt.imread(image_path1)
-plt.imshow(img1)
-plt.axis('off')  # Optional: Hide axis labels and ticks
-plt.show()
+# List of image filenames in the folder
+image_filenames = ["image1.jpeg", "image2.jpeg", "image3.jpeg", "image4.jpeg", "image5.jpeg"]  # Add more filenames as needed
 
-# Add a delay of 0.3 seconds
-time.sleep(0.3)
+# Load and display each image with a delay
+for image_filename in image_filenames:
+    image_path = os.path.join(image_folder, image_filename)
+    img = plt.imread(image_path)
+    plt.imshow(img)
+    plt.axis('off')  # Optional: Hide axis labels and ticks
+    plt.show(block=False)  # Set block=False to allow plt.pause to work
 
-# Load and display the second image
-img2 = plt.imread(image_path2)
-plt.imshow(img2)
-plt.axis('off')  # Optional: Hide axis labels and ticks
-plt.show()
+    # Add a delay of 0.3 seconds between images
+    plt.pause(0.3)
 
+    # Clear the current figure to remove the displayed image
+    plt.clf()
+
+# Close the figure to ensure it's not left open
+plt.close()
 # %%
