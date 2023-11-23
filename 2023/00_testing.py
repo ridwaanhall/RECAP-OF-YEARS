@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import os, time
 
 # %%
+
 # Get the absolute path to the image folder
 script_dir = os.path.dirname(os.path.abspath(__file__))
 image_folder = os.path.join(script_dir, "images")
